@@ -33,7 +33,9 @@ export default function QueryProcessor(query: string): string {
     return (x+y).toString();
   }
   
-  const addMatch3 = query.match(/Which of the following numbers is both a square and a cube: (\d+), (\d+), (\d+), (\d+), (\d+), (\d+), (\d+)?/);
+  
+  
+  const addMatch3 = query.match(/Which of the following numbers are primes: (\d+), (\d+), (\d+), (\d+), (\d+)/);
   
   if (addMatch3){
     
@@ -42,8 +44,6 @@ export default function QueryProcessor(query: string): string {
     const c = parseInt(addMatch3[3]);
     const d = parseInt(addMatch3[4]);
     const e = parseInt(addMatch3[5]);
-    const f = parseInt(addMatch3[6]);
-    const g = parseInt(addMatch3[7]);
   }
   
   const addMatch4 = query.match(/What is (\d+) minus (\d+)/);
@@ -59,6 +59,13 @@ export default function QueryProcessor(query: string): string {
     const y = parseInt(addMatch5[2]);
     const z = parseInt(addMatch5[2]);
     return (x+y+z).toString();
+  }
+  
+  const addMatch6 = query.match(/What is (\d+) to the power of (\d+)/);
+  if (addMatch6){
+    const x = parseInt(addMatch6[1]);
+    const y = parseInt(addMatch6[2]);
+    return (x ** y).toString();
   }
 
   return "";
