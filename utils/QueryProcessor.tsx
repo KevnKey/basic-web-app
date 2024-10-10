@@ -18,10 +18,6 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
-  const addMatch2 = query.match(/Which of the following numbers is both a square and a cube: (\d+), (\d+), (\d+), (\d+), (\d+), (\d+), (\d+)?/);
-  if (addMatch2){
-    const x = parseInt(addMatch2[1]);
-  }
   
   const addMatch = query.match(/What is (\d+) multiplied by (\d+)/);
   if (addMatch){
@@ -30,6 +26,26 @@ export default function QueryProcessor(query: string): string {
     return (x*y).toString();
   }
   
+  const addMatch2 = query.match(/What is (\d+) plus (\d+)/);
+  if (addMatch2){
+    const x = parseInt(addMatch2[1]);
+    const y = parseInt(addMatch2[2]);
+    return (x+y).toString();
+  }
+  
+  const addMatch3 = query.match(/Which of the following numbers is both a square and a cube: (\d+), (\d+), (\d+), (\d+), (\d+), (\d+), (\d+)?/);
+  
+  if (addMatch3){
+    
+    const a = parseInt(addMatch3[1]);
+    const b = parseInt(addMatch3[2]);
+    const c = parseInt(addMatch3[3]);
+    const d = parseInt(addMatch3[4]);
+    const e = parseInt(addMatch3[5]);
+    const f = parseInt(addMatch3[6]);
+    const g = parseInt(addMatch3[7]);
+    if
+  }
 
   return "";
 }
