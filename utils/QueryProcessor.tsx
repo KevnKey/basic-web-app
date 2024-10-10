@@ -44,7 +44,6 @@ export default function QueryProcessor(query: string): string {
     const e = parseInt(addMatch3[5]);
     const f = parseInt(addMatch3[6]);
     const g = parseInt(addMatch3[7]);
-    if
   }
   
   const addMatch4 = query.match(/What is (\d+) minus (\d+)/);
