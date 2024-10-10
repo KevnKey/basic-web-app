@@ -6,12 +6,30 @@ export default function QueryProcessor(query: string): string {
       "writer in the English language and the world's pre-eminent dramatist."
     );
   }
-  
   if (query.toLowerCase().includes("what is your andrew id?")) {
     return (
       "kevincao"
     );
   }
+  
+  if (query.includes("Which of the following numbers is the largest:")) {
+    return (
+      "kevincao"
+    );
+  }
+
+  const addMatch2 = query.match(/Which of the following numbers is both a square and a cube: (\d+), (\d+), (\d+), (\d+), (\d+), (\d+), (\d+)?/);
+  if (addMatch2){
+    const x = parseInt(addMatch2[1]);
+  }
+  
+  const addMatch = query.match(/What is (\d+) multiplied by (\d+)/);
+  if (addMatch){
+    const x = parseInt(addMatch[1]);
+    const y = parseInt(addMatch[2]);
+    return (x*y).toString();
+  }
+  
 
   return "";
 }
